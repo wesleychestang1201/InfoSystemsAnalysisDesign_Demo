@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="pageTitle">
+    <ion-title id="pageTitle">
       What Does it M.E.A.N. ?
     </ion-title>
   </ion-toolbar>
@@ -16,7 +16,7 @@
   <!-- MeanCards -->
   <div id="cardHolder">
   <!-- MongoDB-->
-  <ion-card class="meanCard">
+  <ion-card id="mongoCard" class="meanCard">
     <img class="meanCardPic" src="../../assets/img/MongoPic.png">
     <ion-card-header>
       <ion-card-subtitle>NoSQL</ion-card-subtitle>
@@ -29,7 +29,7 @@
   </ion-card>
 
   <!-- Express -->
-  <ion-card class="meanCard">
+  <ion-card id="expressCard" class="meanCard">
       <img class="meanCardPic" src="../../assets/img/ExpressPic.png">
     <ion-card-header>
       <ion-card-subtitle>JavaScript Framework</ion-card-subtitle>
@@ -43,7 +43,7 @@
   </ion-card>
 
   <!-- Angular -->
-  <ion-card class="meanCard">
+  <ion-card id="angularCard" class="meanCard" (click)="restyleHomepage()">
       <img class="meanCardPic" src="../../assets/img/AngularPic.png">
     <ion-card-header>
       <ion-card-subtitle>JavasScript Framework</ion-card-subtitle>
@@ -58,7 +58,7 @@
   </ion-card>
 
   <!-- Node -->
-  <ion-card class="meanCard">
+  <ion-card id="nodeCard" class="meanCard">
       <img class="meanCardPic" src="../../assets/img/NodePic.png">
     <ion-card-header>
       <ion-card-subtitle>JavaScript Framework</ion-card-subtitle>
@@ -74,7 +74,7 @@
 
 
   <!--  -->
-  <div class="clickMeButton">
+  <div id="clickMeButton">
     <ion-button shape='round' size="large" (click)="myProfile()">Click Me</ion-button>
   </div>
 </ion-content>

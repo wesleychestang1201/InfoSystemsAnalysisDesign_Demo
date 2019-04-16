@@ -1,5 +1,5 @@
 
-.pageTitle {
+#pageTitle {
     text-align: center;
     font-size: 35px;
 }
@@ -24,8 +24,11 @@
     width: 100%;
 }
 
-.clickMeButton {
+#clickMeButton {
+    //Do not display the button by default
+    display: none;
     text-align: center;
     padding: 30px;
 }
+
 
