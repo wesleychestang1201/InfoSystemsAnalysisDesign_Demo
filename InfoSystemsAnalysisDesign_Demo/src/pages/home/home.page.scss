@@ -1,5 +1,31 @@
 
+.pageTitle {
+    text-align: center;
+    font-size: 35px;
+}
 
-.clickMeButton{
+#cardHolder {
+    display:block;
+    width: 95vw;
+    margin: auto;
+    line-height: 50%;
     text-align: center;
 }
+
+.meanCard {
+    display: inline-block;
+    vertical-align: middle;
+    height: 520px;
+    width: 300px;
+    box-shadow: 4px 8px 4px 2px #888888;
+}
+
+.meanCardPic {
+    width: 100%;
+}
+
+.clickMeButton {
+    text-align: center;
+    padding: 30px;
+}
+

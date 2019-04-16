@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Information Systems Analysis - Design Demonstration!
+    <ion-title class="pageTitle">
+      What Does it M.E.A.N. ?
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,60 +10,71 @@
   
 
   <!-- Input Box -->
-  <ion-input placeholder="Type something!"></ion-input>
+  <!-- <ion-input placeholder="Type something!"></ion-input> -->
+  
 
-  <!-- MEAN-->
-  <ion-card>
+  <!-- MeanCards -->
+  <div id="cardHolder">
+  <!-- MongoDB-->
+  <ion-card class="meanCard">
+    <img class="meanCardPic" src="../../assets/img/MongoPic.png">
     <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>NoSQL</ion-card-subtitle>
+      <ion-card-title>M.</ion-card-title>
     </ion-card-header>
-    <!-- <img source="src/assets/NodePic.png"></img> -->
+    
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        MongoDB is a NoSQL database which uses an object-oriented model rather than a relational model.
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <!-- Express -->
+  <ion-card class="meanCard">
+      <img class="meanCardPic" src="../../assets/img/ExpressPic.png">
     <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>JavaScript Framework</ion-card-subtitle>
+      <ion-card-title>E.</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        Express is a Lightweight, back-end framework that is built on top of Node.js. Extremely robust
+        functionality in spite of being such a lightweight framework.
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <!-- Angular -->
+  <ion-card class="meanCard">
+      <img class="meanCardPic" src="../../assets/img/AngularPic.png">
     <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>JavasScript Framework</ion-card-subtitle>
+      <ion-card-title>A.</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        AngularJS is a front-end, JavaScript framework and platform for building applications via HTML 
+        and Typescript. Its robust library of methods and components allow DOM manipulation with a much higher
+        level of abstraction.
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <!-- Node -->
+  <ion-card class="meanCard">
+      <img class="meanCardPic" src="../../assets/img/NodePic.png">
     <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>JavaScript Framework</ion-card-subtitle>
+      <ion-card-title>N.</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        Node.js is a JavaScrip Framework which serves as a back-end runtime environment, and is the 
+        backbone of the M.E.A.N. stack.
     </ion-card-content>
   </ion-card>
+</div>
 
 
   <!--  -->
   <div class="clickMeButton">
-    <ion-button shape='round' (click)="myProfile()">Click Me</ion-button>
+    <ion-button shape='round' size="large" (click)="myProfile()">Click Me</ion-button>
   </div>
 </ion-content>
