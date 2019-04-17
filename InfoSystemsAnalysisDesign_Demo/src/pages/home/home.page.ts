@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,20 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  constructor(private router: Router, ) {
+  };
 
+
+  //Navigate to the "Exploded Flow Diagram" page
+  navigateToDiagramPage() {
+    this.router.navigate(['exploded-flow-diagram']);
+  }
 
 
   //Clicking the "AngularCard" calles the function
   restyleHomepage() {
     //Change properties of these elements which are refered to by their ID value
-    document.getElementById("pageTitle").innerText = "ANGULAR !"
+    setTimeout(() => document.getElementById("pageTitle").innerText = "ANGULAR !", 1000);
 
     //AngularCard
     document.getElementById("angularCard").style.animationPlayState = "running";
