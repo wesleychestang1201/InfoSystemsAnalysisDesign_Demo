@@ -4,6 +4,18 @@
     font-size: 35px;
 }
 
+#clickMeButton {
+    //Do not display the button by default
+    display: none;
+    text-align: center;
+    padding: 30px;
+    //Reference the CSS animation "fadeIn" and provide parameters for its execution
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-play-state: paused;
+}
+
+//#region CardStyling
 #cardHolder {
     display:block;
     width: 95vw;
@@ -12,6 +24,7 @@
     text-align: center;
 }
 
+//.meanCard Class applied to all cards 
 .meanCard {
     display: inline-block;
     vertical-align: middle;
@@ -20,15 +33,60 @@
     box-shadow: 4px 8px 4px 2px #888888;
 }
 
+//Picture nested in each card
 .meanCardPic {
     width: 100%;
 }
 
-#clickMeButton {
-    //Do not display the button by default
-    display: none;
-    text-align: center;
-    padding: 30px;
+//#endregion
+
+
+//#region cardAnimations
+
+//NOTE::Keyframes are used to create CSS animations and are called within the element which is meant to use the animation
+@keyframes fadeOut {
+    //Change the opacity of the element from fully visible to invisible
+    from {opacity: 1};
+    to {opacity: 0};
 }
 
+@keyframes fadeIn {
+    //Change the opacity of the element from invisible to full visible
+    from {opacity: 0};
+    to {opacity: 1};
+}
 
+@keyframes fadeInGoldBoxShadow {
+    // Fade in the gold back shadow ... by making it grow outward
+    from {box-shadow: 0px opx 0px 0px #FABC02};
+    to {box-shadow: 0px 0px 100px 40px #FABC02};
+}
+
+//Though it was possible to make the "AngularCard" a seperate class and save a few lines of code...
+//By applying the animation to the class, it is possible to give each card custom animation if necessary
+
+#angularCard {
+    animation-name: fadeInGoldBoxShadow;
+    animation-duration: 1s;
+    animation-play-state: paused;
+}
+
+#mongoCard {
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-play-state: paused;
+}
+
+#expressCard {
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-play-state: paused;
+}
+
+#nodeCard {
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-play-state: paused;
+}
+
+//#endregion
