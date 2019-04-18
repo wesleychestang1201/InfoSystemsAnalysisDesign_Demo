@@ -1,0 +1,58 @@
+
+#pageTitle {
+    text-align: center;
+    font-size: 35px;
+}
+
+#clickMeButton {
+    //Do not display the button by default
+    display: none;
+    text-align: center;
+    padding: 30px;
+    //Reference the CSS animation "fadeIn" and provide parameters for its execution
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-play-state: paused;
+}
+
+//#region CardStyling
+#cardHolder {
+    display:block;
+    width: 95vw;
+    margin: auto;
+    line-height: 50%;
+    text-align: center;
+}
+
+//.meanCard Class applied to all cards 
+.meanCard {
+    display: inline-block;
+    vertical-align: middle;
+    height: 520px;
+    width: 300px;
+    box-shadow: 4px 8px 4px 2px #888888;
+}
+
+#explanationCard {
+   
+}
+
+#explanationTextContainer {
+    //You can also center an element in its parent container with the following three lines of code
+    //It sets the top of the element 50% the way down its parents height (the middle)
+    //Then transform moves it in the Y axis -50 relative to its own size, shifting half of itself upward
+    //In other words it pushes half of itself over the parents center (creating a centering effect)
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    //NOTE: It may be paranoia, but I do not like transform commands...
+    //As they must be delared differently for different levls of browser support which worries me for sake of continuity
+}
+
+//Picture nested in each card
+.meanCardPic {
+    width: 100%;
+}
+
+//#endregion
+

@@ -12,9 +12,9 @@ export class HomePage {
   };
 
 
-  //Navigate to the "Exploded Flow Diagram" page
+  //Navigate to the "Angular Directives Explanation" page
   navigateToDiagramPage() {
-    this.router.navigate(['exploded-flow-diagram']);
+    this.router.navigate(['angular-directives-explanation']);
   }
 
 

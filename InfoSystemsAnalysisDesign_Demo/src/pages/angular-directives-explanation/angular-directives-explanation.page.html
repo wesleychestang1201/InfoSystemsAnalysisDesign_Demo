@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>AngularDirectivesExplanation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="cardHolder">
+    <!-- Ng Directives -->
+    <ion-card id="ngDirectivesCard" class="meanCard">
+      <img class="meanCardPic" src="../../assets/img/AngularPic.png">
+      <ion-card-header>
+        <ion-card-title>Ng Directives</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+          The prefix "ng-" is used to extend AngularJS directives to HTML. 
+      </ion-card-content>
+
+      <ion-card-content>
+        While we will only focus on a few, AngularJS has not only an extensive library of directives 
+        but also allows you to create your own.
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Explanation -->
+    <ion-card id="explanationCard" class="meanCard" (click)="restyleHomepage()">
+      <div id="explanationTextContainer">
+        <ion-card-content>
+          AngularJS has many directives which make it a powerful front-end framework. You can extend 
+          HTML with these directives to add additional functionality to your applications.
+        </ion-card-content>
+
+        <ion-card-header>
+          <ion-card-title>_______________________</ion-card-title>
+        </ion-card-header>
+
+        <br>
+
+        <ion-card-content>
+          There are some directives and features of angular which have proven to be absolutely
+          paramount in harnessing the power of AngularJS within my own work.
+        </ion-card-content>
+      </div>
+    </ion-card>
+
+    <!-- Two Way Data Binding -->
+    <ion-card id="twoWayDataBindingCard" class="meanCard">
+      <img class="meanCardPic" src="../../assets/img/NodePic.png">
+      <ion-card-header>
+        <ion-card-title>Two Way Data Binding</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+       Data binding in AngularJS allows synchronization between the model and the view. Changes in the view
+       are reflected in the model, and changes in the model are refleced in the view. This ensures the 
+       view is always up to date, as changes are reflected immediately and automatically.
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+  <!--  -->
+  <div id="clickMeButton">
+    <ion-button shape='round' size="large" (click)="navigateToDiagramPage()">Click Me</ion-button>
+  </div>
+
+</ion-content>
