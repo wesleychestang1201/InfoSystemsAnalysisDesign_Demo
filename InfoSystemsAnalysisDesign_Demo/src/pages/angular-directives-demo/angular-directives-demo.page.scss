@@ -68,3 +68,32 @@
 
 
 //#endregion
+
+
+//#region textBoxEntry
+#textBoxEntryContainer {
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+    line-height: 50%;
+    text-align: center;
+}
+
+.textBoxLabel {
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 50px;
+    color: rgba(191,13,62,1);
+}
+
+.textBox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 50px;
+    color: rgba(0,32,91,1);
+}
+
+//#endregion

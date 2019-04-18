@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-angular-directives-demo',
@@ -13,12 +15,23 @@ export class AngularDirectivesDemoPage {
   //This variable is bound to the view through the [(NgModel)] directive 
   colorSelection: any;
 
-  constructor() { }
+  //This variable is bound to the view through the [(NgModel)] directive 
+  textBoxEntry: any;
 
-  displayInfo() {
-    if (this.demonstrationSelection == "twoWayDataBinding") {
-    console.log(this.demonstrationSelection)
-    }
+
+
+  //The constructor is used to instantiate any variables or representations of imports such as alert controllers
+  constructor(public toastController: ToastController) { }
+
+
+  //Display the popup message
+  async displayMessage() {
+    const toast = await this.toastController.create({
+      message: this.textBoxEntry,
+      position: "middle",
+      duration: 2000
+    });
+    toast.present();
   }
 
   
