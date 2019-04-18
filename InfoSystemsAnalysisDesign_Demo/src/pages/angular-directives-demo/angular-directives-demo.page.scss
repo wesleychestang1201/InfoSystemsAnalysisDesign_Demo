@@ -1,0 +1,29 @@
+    #pageTitle {
+        text-align: center;
+        font-size: 35px;
+    }   
+
+//#region SegmentCustomization
+
+    //Segment
+    .segmentToolbarBackground {
+        padding-top: 20px;
+    }
+
+    // Segment Buttons
+    .toolbar .segment-button {
+        max-width: 500px;
+    }
+
+    //Segment Buttons
+    .segmentButton {
+        border-left-width: .5px;
+        border-right-width: .5px;
+    }
+
+     .sc-ion-segment-md-h {
+        --color-checked: rgba(0,32,91,1);
+        // --color-checked: rgba(191,13,62,1);
+    }
+
+//#endregion

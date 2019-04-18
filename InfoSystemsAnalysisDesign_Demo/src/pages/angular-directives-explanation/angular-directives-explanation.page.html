@@ -8,7 +8,7 @@
 
   <div id="cardHolder">
     <!-- Ng Directives -->
-    <ion-card id="ngDirectivesCard" class="meanCard" (click)="showClickMeButton()">
+    <ion-card id="ngDirectivesCard" class="meanCard" (click)="showClickMeAgainButton()">
       <img class="meanCardPic" src="../../assets/img/NgDirectivesPic.png">
       <ion-card-header>
         <ion-card-title>Ng Directives</ion-card-title>
@@ -25,7 +25,7 @@
     </ion-card>
 
     <!-- Explanation -->
-    <ion-card id="explanationCard" class="meanCard">
+    <ion-card id="explanationCard" class="meanCard" (click)="showClickMeAgainButton()">
       <div id="explanationTextContainer">
         <ion-card-content>
           AngularJS has many directives which make it a powerful front-end framework. You can extend 
@@ -46,7 +46,7 @@
     </ion-card>
 
     <!-- Two Way Data Binding -->
-    <ion-card id="twoWayDataBindingCard" class="meanCard" (click)="showClickMeButton()">
+    <ion-card id="twoWayDataBindingCard" class="meanCard" (click)="showClickMeAgainButton()">
       <img class="meanCardPic" src="../../assets/img/TwoWayDataBindingPic.png">
       <ion-card-header>
         <ion-card-title>Two Way Data Binding</ion-card-title>
@@ -62,8 +62,8 @@
 
 
   <!--  -->
-  <div id="clickMeButton">
-    <ion-button shape='round' size="large" (click)="navigateToDiagramPage()">Click Me</ion-button>
+  <div id="ClickMeAgainButton">
+    <ion-button shape='round' size="large" (click)="navigateToDemoPage()">Click Me</ion-button>
   </div>
 
 </ion-content>

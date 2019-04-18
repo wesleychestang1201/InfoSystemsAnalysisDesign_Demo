@@ -1,9 +1,68 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>AngularDirectivesDemo</ion-title>
+    <ion-title id="pageTitle">Demonstration</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+
+
+
+
+
+<!-- Demonstration Selection Segment / Buttons -->
+  <ion-toolbar no-border class="segmentToolbarBackground">
+    <!-- Segment Definition -->
+      <ion-segment  [(ngModel)]="demonstrationSelection" (ionChange)="displayInfo($event)">
+  
+        <!-- Segment Button Definitions -->
+        <ion-segment-button class="segmentButton" value="ngIf">
+          *NgIf
+        </ion-segment-button>
+  
+        <ion-segment-button class="segmentButton" value="ngFor">
+          *NgFor
+        </ion-segment-button>
+  
+        <ion-segment-button class="segmentButton" value="twoWayDataBinding">
+          Two Way Data Binding
+        </ion-segment-button>
+
+      </ion-segment>
+    </ion-toolbar>
+
+
+
+
+
+
+
+
+
+
+    <!-- *NgIf : Decides which templated to build based on demonstration selection -->
+    <p *ngIf="demonstrationSelection=='twoWayDataBinding'">
+       Two Way! 
+    </p>
+    <!--  -->
+  
+
+
+
+
+
+
+
+
+
+
+  <!-- *NgFor : Creates a list of elements for each object in a bound array -->
+
+
+
+  <div id="clickMeButton">
+      <ion-button shape='round' size="large" (click)="displayInfo()">Click Me</ion-button>
+  </div>
+  
 </ion-content>

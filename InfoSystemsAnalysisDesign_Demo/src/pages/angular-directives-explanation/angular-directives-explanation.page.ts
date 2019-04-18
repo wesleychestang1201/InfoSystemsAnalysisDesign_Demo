@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-angular-directives-explanation',
@@ -7,15 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AngularDirectivesExplanationPage {
 
-  constructor() { 
+  constructor(private router: Router, ) {
+  };
 
+   //Navigate to the "Angular Directives Demo" page
+   navigateToDemoPage() {
+    this.router.navigate(['angular-directives-demo']);
   }
 
-  
-
   //Show the "ClickMe" Button
-  showClickMeButton() {
-    document.getElementById("clickMeButton").style.display = "block"
-    document.getElementById("clickMeButton").style.animationPlayState = "running";
+  showClickMeAgainButton() {
+    document.getElementById("ClickMeAgainButton").style.display = "block"
+    document.getElementById("ClickMeAgainButton").style.animationPlayState = "running";
   }
 }
