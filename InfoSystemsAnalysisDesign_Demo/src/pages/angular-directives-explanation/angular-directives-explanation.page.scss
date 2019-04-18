@@ -5,11 +5,9 @@
 }
 
 #clickMeButton {
-    //Do not display the button by default
     display: none;
     text-align: center;
     padding: 30px;
-    //Reference the CSS animation "fadeIn" and provide parameters for its execution
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-play-state: paused;
@@ -56,3 +54,12 @@
 
 //#endregion
 
+//#region Animations
+
+@keyframes fadeIn {
+    //Change the opacity of the element from invisible to full visible
+    from {opacity: 0};
+    to {opacity: 1};
+}
+
+//#endregion
