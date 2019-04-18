@@ -21,7 +21,7 @@
   <!-- Demonstration Selection Segment / Buttons -->
   <ion-toolbar no-border class="segmentToolbarBackground">
     <!-- Segment Definition -->
-    <ion-segment [(ngModel)]="demonstrationSelection" (ionChange)="displayInfo($event)">
+    <ion-segment [(ngModel)]="demonstrationSelection" (ionChange)="populateArray()">
 
       <!-- Segment Button Definitions -->
       <ion-segment-button class="segmentButton" value="ngIf">
@@ -63,16 +63,18 @@
       <ion-button class="textBoxButton" shape='round' size="medium" (click)="displayMessage()">Click Me If You Don't Believe</ion-button>
   </div>
 
+  
+  <!-- *NgFor : Dynamically builds HTML elements in the view for each instance of a variable in a collection -->
+  <div id="forLoopListContainer" *ngIf="demonstrationSelection=='ngFor'">
+   <ion-list  *ngFor="let color of colors" lines="none">
+      <ion-item>
+        <ion-label class="colorListLable" *ngIf="color=='Purple'" style="color:purple"> {{ color }}</ion-label>
+        <ion-label class="colorListLable" *ngIf="color=='Blue'" style="color:rgb(0, 32, 91)"> {{ color }}</ion-label>
+        <ion-label class="colorListLable" *ngIf="color=='Red'" style="color:rgb(191,13,62)"> {{ color }}</ion-label>
+        <ion-label class="colorListLable" *ngIf="color=='Grey'" style="color:rgb(51, 51, 51)"> {{ color }}</ion-label>
+      </ion-item>
+    </ion-list>
+ </div>
 
-
-
-
-  <!-- *NgFor : Creates a list of elements for each object in a bound array -->
-
-<!-- 
-
-  <div id="clickMeButton">
-      <ion-button shape='round' size="large" (click)="displayInfo()">Click Me</ion-button>
-  </div> -->
 
 </ion-content>

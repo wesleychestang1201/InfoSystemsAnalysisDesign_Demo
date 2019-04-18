@@ -97,3 +97,21 @@
 }
 
 //#endregion
+
+
+//#region forLoopList
+#forLoopListContainer {
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+    text-align: center;
+    text-align: center;
+}
+
+.colorListLable {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 50px; 
+    text-align: center;
+}
+//#endregion
