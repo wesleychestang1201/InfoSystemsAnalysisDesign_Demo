@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar>
 
-    <!-- We use *NgIf to specify the properties of the title if the condition is not met -->
+    <!-- *NgIf Else -->
+    <!-- We use *NgIf Else to specify the properties of the title if the condition is not met -->
     <!-- With *NgIF the first parameter is the condition, the second is a reference to the template -->
-    <ion-title id="pageTitle" *ngIf="!demonstrationSelection; else selectionMade">Demonstration Has Not Begun Yet!</ion-title>
+    <ion-title id="pageTitle" *ngIf="!demonstrationSelection; else selectionMade">Demonstration Has Not Begun Yet!
+    </ion-title>
     <!-- We then create an "ng-template" which will be loaded as the element if the condition is met -->
     <ng-template #selectionMade>
       <ion-title id="pageTitle">Demonstration Underway!</ion-title>
@@ -16,46 +18,54 @@
 
 
 
-<!-- Demonstration Selection Segment / Buttons -->
+  <!-- Demonstration Selection Segment / Buttons -->
   <ion-toolbar no-border class="segmentToolbarBackground">
     <!-- Segment Definition -->
-      <ion-segment  [(ngModel)]="demonstrationSelection" (ionChange)="displayInfo($event)">
-  
-        <!-- Segment Button Definitions -->
-        <ion-segment-button class="segmentButton" value="ngIf">
-          *NgIf
-        </ion-segment-button>
-  
-        <ion-segment-button class="segmentButton" value="ngFor">
-          *NgFor
-        </ion-segment-button>
-  
-        <ion-segment-button class="segmentButton" value="twoWayDataBinding">
-          Two Way Data Binding
-        </ion-segment-button>
+    <ion-segment [(ngModel)]="demonstrationSelection" (ionChange)="displayInfo($event)">
 
-      </ion-segment>
-    </ion-toolbar>
+      <!-- Segment Button Definitions -->
+      <ion-segment-button class="segmentButton" value="ngIf">
+        *NgIf
+      </ion-segment-button>
 
+      <ion-segment-button class="segmentButton" value="ngFor">
+        *NgFor
+      </ion-segment-button>
 
-   
+      <ion-segment-button class="segmentButton" value="twoWayDataBinding">
+        Two Way Data Binding
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
 
 
 
+  <!-- The container of color selections and the angular logo -->
+  <div id="colorSelectorContainer" *ngIf="demonstrationSelection=='ngIf'">
+    <!-- Call the "changeLogoColor" function and pass a string parameter of the desired color -->
+    <ion-icon name="color-fill" class="jagBlue" (click)="changeLogoColor('blue')"></ion-icon>
+    <ion-icon name="color-fill" class="jagRed" (click)="changeLogoColor('red')"></ion-icon>
+    <br>
+    <!-- Change the color of the logo depending on color selection from the paint bucket icons -->
+    <!-- By default if there is no color selection leave the logo grey. -->
+    <ion-icon *ngIf="!colorSelection" name="logo-angular" class="angularLogo" style="color:rgb(51,51,51)"></ion-icon>
+    <ion-icon *ngIf="colorSelection=='blue'" name="logo-angular" class="angularLogo" style="color:rgb(0, 32, 91)"></ion-icon>
+    <ion-icon *ngIf="colorSelection=='red'" name="logo-angular" class="angularLogo" style="color:rgb(191,13,62)"></ion-icon>
+  </div>
 
-    <!-- *NgIf : Decides which templated to build based on demonstration selection -->
-    <p *ngIf="demonstrationSelection=='twoWayDataBinding'">
-       Two Way! 
-    </p>
-    <!--  -->
-  
 
 
 
 
+  <!-- *NgIf : Decides which templated to build based on demonstration selection -->
+  <p *ngIf="demonstrationSelection=='twoWayDataBinding'">
+
+  </p>
+  <!--  -->
 
 
-    <!-- <ion-icon name="logo-angular"></ion-icon> -->
+
 
 
 
@@ -63,8 +73,8 @@
 
 
 
-  <div id="clickMeButton">
+  <!-- <div id="clickMeButton">
       <ion-button shape='round' size="large" (click)="displayInfo()">Click Me</ion-button>
-  </div>
+  </div> -->
 
 </ion-content>

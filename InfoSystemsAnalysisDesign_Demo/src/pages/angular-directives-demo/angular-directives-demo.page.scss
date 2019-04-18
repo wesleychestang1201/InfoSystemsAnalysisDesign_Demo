@@ -27,3 +27,44 @@
     }
 
 //#endregion
+
+
+//#region colorCustomization
+
+#colorSelectorContainer {
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+    line-height: 50%;
+    text-align: center;
+}
+
+.jagBlue {
+    margin-right: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 100px;
+    color: rgba(0,32,91,1);  
+}
+
+.jagRed {
+    margin-left: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 100px;
+    color: rgba(191,13,62,1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.angularLogo {
+    padding-top: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 300px;
+}
+
+
+
+
+//#endregion
