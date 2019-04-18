@@ -1,13 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title id="pageTitle">Demonstration</ion-title>
+
+    <!-- We use *NgIf to specify the properties of the title if the condition is not met -->
+    <!-- With *NgIF the first parameter is the condition, the second is a reference to the template -->
+    <ion-title id="pageTitle" *ngIf="!demonstrationSelection; else selectionMade">Demonstration Has Not Begun Yet!</ion-title>
+    <!-- We then create an "ng-template" which will be loaded as the element if the condition is met -->
+    <ng-template #selectionMade>
+      <ion-title id="pageTitle">Demonstration Underway!</ion-title>
+    </ng-template>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-
-
 
 
 
@@ -33,10 +38,7 @@
     </ion-toolbar>
 
 
-
-
-
-
+   
 
 
 
@@ -53,7 +55,7 @@
 
 
 
-
+    <!-- <ion-icon name="logo-angular"></ion-icon> -->
 
 
 
@@ -64,5 +66,5 @@
   <div id="clickMeButton">
       <ion-button shape='round' size="large" (click)="displayInfo()">Click Me</ion-button>
   </div>
-  
+
 </ion-content>
