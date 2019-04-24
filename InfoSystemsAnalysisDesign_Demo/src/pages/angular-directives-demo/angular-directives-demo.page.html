@@ -79,7 +79,7 @@
   <!-- *NgIf : Decides which templated to build based on demonstration selection -->
   <div id="textBoxEntryContainer" *ngIf="demonstrationSelection=='twoWayDataBinding'">
       <ion-label class="textBoxLabel">{{textBoxEntry}}</ion-label>
-      <ion-input class="textBox" type="text" placeholder="Type Here!" [(ngModel)]="textBoxEntry"></ion-input>
+      <ion-input class="textBox" type="text" placeholder="..." [(ngModel)]="textBoxEntry"></ion-input>
       <ion-button class="textBoxButton" shape='round' size="medium" (click)="displayMessage()">Click Me If You Don't Believe</ion-button>
   </div>
 <!-- #endregion -->
