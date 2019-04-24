@@ -17,11 +17,11 @@
       </ion-card-header>
 
       <ion-card-content>
-          The prefix "ng-" is used to extend AngularJS directives to HTML. 
+        The prefix "ng-" is used to extend AngularJS directives to HTML.
       </ion-card-content>
 
       <ion-card-content>
-        While we will only focus on a few, AngularJS has not only an extensive library of directives 
+        While we will only focus on a few, AngularJS has not only an extensive library of directives
         but also allows you to create your own.
       </ion-card-content>
     </ion-card>
@@ -30,7 +30,7 @@
     <ion-card id="explanationCard" class="meanCard" (click)="showDemoTypeSelection()">
       <div id="explanationTextContainer">
         <ion-card-content>
-          AngularJS has many directives which make it a powerful front-end framework. You can extend 
+          AngularJS has many directives which make it a powerful front-end framework. You can extend
           HTML with these directives to add additional functionality to your applications.
         </ion-card-content>
 
@@ -55,13 +55,13 @@
       </ion-card-header>
 
       <ion-card-content>
-       Data binding in AngularJS allows synchronization between the model and the view. Changes in the view
-       are reflected in the model, and changes in the model are refleced in the view. This ensures the 
-       view is always up to date, as changes are reflected immediately and automatically.
+        Data binding in AngularJS allows synchronization between the model and the view. Changes in the view
+        are reflected in the model, and changes in the model are refleced in the view. This ensures the
+        view is always up to date, as changes are reflected immediately and automatically.
       </ion-card-content>
     </ion-card>
   </div>
-<!-- #endregion -->
+  <!-- #endregion -->
 
 
 
@@ -70,26 +70,29 @@
   <!-- #region DemoTypeSelection -->
   <!-- Toggle The Demo Type -- accoring to length of demonstration desired -->
   <div id="DemoTypeSelection">
-    <ion-button class="demoTypeSelectionControls" shape="round" size="large" (click)="navigateToDemoPage()">Click Me</ion-button>
+    <ion-button class="demoTypeSelectionControls" shape="round" size="large" (click)="navigateToDemoPage()">Click Me
+    </ion-button>
     <br>
-  
+
     <ion-list lines="none">
       <ion-item class="demoTypeSelectionControls">
         <!-- Toggle the 15 minute demo default state -->
-       <ion-toggle id="15minDemoToggle" *ngIf="demoTypeSelection != '15'; else toggleChecked15" (click)="manageToggleControls(15)"></ion-toggle>
+        <ion-toggle id="15minDemoToggle" *ngIf="demoTypeSelection != '15'; else toggleChecked15"
+          (click)="manageToggleControls(15)"></ion-toggle>
         <ion-label>15 Minute Demonstration</ion-label>
 
         <!-- Template if the "demoTypeSelection" does = 15-->
         <ng-template #toggleChecked15>
-            <ion-toggle id="15minDemoToggle" checked (click)="manageToggleControls()"></ion-toggle>
+          <ion-toggle id="15minDemoToggle" checked (click)="manageToggleControls()"></ion-toggle>
         </ng-template>
       </ion-item>
-  
+
       <br>
 
       <ion-item class="demoTypeSelectionControls">
         <!-- Toggle the 30 minute demo default state -->
-        <ion-toggle id="30minDemoToggle" *ngIf="demoTypeSelection != '30'; else toggleChecked30" (click)="manageToggleControls(30)"></ion-toggle>
+        <ion-toggle id="30minDemoToggle" *ngIf="demoTypeSelection != '30'; else toggleChecked30"
+          (click)="manageToggleControls(30)"></ion-toggle>
         <ion-label>30 Minute Demonstration</ion-label>
 
         <!-- Template if the "demoTypeSelection" does = 30-->
@@ -103,7 +106,7 @@
     <ion-title id="pageTitle" *ngIf="!demonstrationSelection; else selectionMade">Demonstration Has Not Begun Yet!
     </ion-title>
   </div>
-<!-- #endregion -->
- 
+  <!-- #endregion -->
+
 
 </ion-content>
