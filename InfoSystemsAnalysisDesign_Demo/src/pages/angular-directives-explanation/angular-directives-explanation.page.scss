@@ -4,7 +4,8 @@
     font-size: 35px;
 }
 
-#ClickMeAgainButton {
+//#region DemoTypeSelection
+#DemoTypeSelection {
     display: none;
     text-align: center;
     padding: 30px;
@@ -12,6 +13,13 @@
     animation-duration: 1s;
     animation-play-state: paused;
 }
+
+.demoTypeSelectionControls {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+//#endregion
 
 //#region CardStyling
 #cardHolder {

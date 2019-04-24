@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AngularDirectivesExplanationPage } from './angular-directives-explanation.page';
+import { AngularDirectivesDemoThirtyMinPage } from './angular-directives-demo-thirty-min.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AngularDirectivesExplanationPage
+    component: AngularDirectivesDemoThirtyMinPage
   }
 ];
 
@@ -21,7 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AngularDirectivesExplanationPage]
+  declarations: [AngularDirectivesDemoThirtyMinPage]
 })
-
-export class AngularDirectivesExplanationPageModule {}
+export class AngularDirectivesDemoThirtyMinPageModule {}

@@ -6,9 +6,11 @@
 
 <ion-content>
 
+
+  <!-- #region CardHolder -->
   <div id="cardHolder">
     <!-- Ng Directives -->
-    <ion-card id="ngDirectivesCard" class="meanCard" (click)="showClickMeAgainButton()">
+    <ion-card id="ngDirectivesCard" class="meanCard" (click)="showDemoTypeSelection()">
       <img class="meanCardPic" src="../../assets/img/NgDirectivesPic.png">
       <ion-card-header>
         <ion-card-title>Ng Directives</ion-card-title>
@@ -25,7 +27,7 @@
     </ion-card>
 
     <!-- Explanation -->
-    <ion-card id="explanationCard" class="meanCard" (click)="showClickMeAgainButton()">
+    <ion-card id="explanationCard" class="meanCard" (click)="showDemoTypeSelection()">
       <div id="explanationTextContainer">
         <ion-card-content>
           AngularJS has many directives which make it a powerful front-end framework. You can extend 
@@ -46,7 +48,7 @@
     </ion-card>
 
     <!-- Two Way Data Binding -->
-    <ion-card id="twoWayDataBindingCard" class="meanCard" (click)="showClickMeAgainButton()">
+    <ion-card id="twoWayDataBindingCard" class="meanCard" (click)="showDemoTypeSelection()">
       <img class="meanCardPic" src="../../assets/img/TwoWayDataBindingPic.png">
       <ion-card-header>
         <ion-card-title>Two Way Data Binding</ion-card-title>
@@ -59,11 +61,49 @@
       </ion-card-content>
     </ion-card>
   </div>
+<!-- #endregion -->
 
 
-  <!--  -->
-  <div id="ClickMeAgainButton">
-    <ion-button shape='round' size="large" (click)="navigateToDemoPage()">Click Me</ion-button>
+
+
+
+  <!-- #region DemoTypeSelection -->
+  <!-- Toggle The Demo Type -- accoring to length of demonstration desired -->
+  <div id="DemoTypeSelection">
+    <ion-button class="demoTypeSelectionControls" shape="round" size="large" (click)="navigateToDemoPage()">Click Me</ion-button>
+    <br>
+  
+    <ion-list lines="none">
+      <ion-item class="demoTypeSelectionControls">
+        <!-- Toggle the 15 minute demo default state -->
+       <ion-toggle id="15minDemoToggle" *ngIf="demoTypeSelection != '15'; else toggleChecked15" (click)="manageToggleControls(15)"></ion-toggle>
+        <ion-label>15 Minute Demonstration</ion-label>
+
+        <!-- Template if the "demoTypeSelection" does = 15-->
+        <ng-template #toggleChecked15>
+            <ion-toggle id="15minDemoToggle" checked (click)="manageToggleControls()"></ion-toggle>
+        </ng-template>
+      </ion-item>
+  
+      <br>
+
+      <ion-item class="demoTypeSelectionControls">
+        <!-- Toggle the 30 minute demo default state -->
+        <ion-toggle id="30minDemoToggle" *ngIf="demoTypeSelection != '30'; else toggleChecked30" (click)="manageToggleControls(30)"></ion-toggle>
+        <ion-label>30 Minute Demonstration</ion-label>
+
+        <!-- Template if the "demoTypeSelection" does = 30-->
+        <ng-template #toggleChecked30>
+          <ion-toggle id="30minDemoToggle" checked (click)="manageToggleControls()"></ion-toggle>
+        </ng-template>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-title id="pageTitle" *ngIf="!demonstrationSelection; else selectionMade">Demonstration Has Not Begun Yet!
+    </ion-title>
   </div>
+<!-- #endregion -->
+ 
 
 </ion-content>
