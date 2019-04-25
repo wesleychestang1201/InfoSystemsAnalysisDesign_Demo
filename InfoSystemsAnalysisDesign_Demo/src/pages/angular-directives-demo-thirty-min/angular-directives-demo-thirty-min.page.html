@@ -1,9 +1,143 @@
+<!-- #region NgIfDemo (Dynamic Title) -->
 <ion-header>
   <ion-toolbar>
-    <ion-title>angular directives demo thirtyMin</ion-title>
+
+    <!-- *NgIf Else -->
+    <!-- We use *NgIf Else to specify the properties of the title if the condition is not met -->
+    <!-- With *NgIF the first parameter is the condition, the second is a reference to the template -->
+    <ion-title id="pageTitle" *ngIf="!demonstrationSelection; else selectionMade">Demonstration Has Not Begun Yet!
+    </ion-title>
+    <!-- We then create an "ng-template" which will be loaded as the element if the condition is met -->
+    <ng-template #selectionMade>
+      <ion-title id="pageTitle">Demonstration Underway!</ion-title>
+    </ng-template>
+
   </ion-toolbar>
 </ion-header>
+<!-- #endregion -->
 
 <ion-content>
+
+
+<!-- #region DemoSelectionSegment -->
+  <!-- Demonstration Selection Segment / Buttons -->
+  <ion-toolbar no-border class="segmentToolbarBackground">
+    <!-- Segment Definition -->
+    <ion-segment [(ngModel)]="demonstrationSelection" (ionChange)="populateArray()">
+
+      <!-- Segment Button Definitions -->
+      <ion-segment-button class="segmentButton" value="navGaurd">
+        *NavGaurd
+      </ion-segment-button>
+
+      <ion-segment-button class="segmentButton" value="ngIf">
+        *NgIf
+      </ion-segment-button>
+
+      <ion-segment-button class="segmentButton" value="ngFor">
+        *NgFor
+      </ion-segment-button>
+
+      <ion-segment-button class="segmentButton" value="twoWayDataBinding">
+        Two Way Data Binding
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+<!-- #endregion -->
+
+
+
+
+
+
+
+
+<!-- #region NgIfDemo (Color Selection) -->
+  <!-- The container of color selections and the angular logo -->
+  <div id="colorSelectorContainer" *ngIf="demonstrationSelection=='ngIf'">
+    <!-- Call the "changeLogoColor" function and pass a string parameter of the desired color -->
+    <ion-icon name="color-fill" class="jagBlue" (click)="changeLogoColor('blue')"></ion-icon>
+    <ion-icon name="color-fill" class="jagRed" (click)="changeLogoColor('red')"></ion-icon>
+    <br>
+    <!-- Change the color of the logo depending on color selection from the paint bucket icons -->
+    <!-- By default if there is no color selection leave the logo grey. -->
+    <ion-icon *ngIf="!colorSelection" name="logo-angular" class="angularLogo" style="color:rgb(51,51,51)"></ion-icon>
+    <ion-icon *ngIf="colorSelection=='blue'" name="logo-angular" class="angularLogo" style="color:rgb(0, 32, 91)"></ion-icon>
+    <ion-icon *ngIf="colorSelection=='red'" name="logo-angular" class="angularLogo" style="color:rgb(191,13,62)"></ion-icon>
+  </div>
+<!-- #endregion -->
+
+
+
+
+
+
+
+  
+<!-- #region TwoWayDataBindingDemo -->
+  <!-- *NgIf : Decides which templated to build based on demonstration selection -->
+  <div id="textBoxEntryContainer" *ngIf="demonstrationSelection=='twoWayDataBinding'">
+      <ion-label class="textBoxLabel">{{textBoxEntry}}</ion-label>
+      <ion-input class="textBox" type="text" placeholder="..." [(ngModel)]="textBoxEntry"></ion-input>
+      <ion-button class="textBoxButton" shape='round' size="medium" (click)="displayMessage()">Click Me If You Don't Believe</ion-button>
+  </div>
+<!-- #endregion -->
+
+
+
+
+
+
+<!-- #region NavGaurdDemo -->
+<!-- *NgIf : Decides which templated to build based on demonstration selection -->
+<div id="psuedoLoginTextBoxEntryContainer" *ngIf="demonstrationSelection=='navGaurd'">
+
+  <ion-list class="loginTextBoxList">
+
+    <!-- Username -->
+    <ion-item class="loginTextBoxItems">
+        <ion-input class="loginTextBox" type="text" disabled="true" placeholder="Username:"></ion-input>
+    </ion-item>
+
+    <ion-item class="loginTextBoxItems">
+        <ion-input class="loginTextBox" type="text" placeholder="..." [(ngModel)]="psuedoLoginUsernameTextBoxEntry"></ion-input>
+    </ion-item>
+
+    <br>
+
+    <!-- Password -->
+    <ion-item class="loginTextBoxItems">
+        <ion-input class="loginTextBox" type="text" disabled="true" placeholder="Password:"></ion-input>
+    </ion-item>
+
+    <ion-item class="loginTextBoxItems">
+      <ion-input class="loginTextBox" type="text" placeholder="..." [(ngModel)]="psuedoLoginPasswordTextBoxEntry"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button class="textBoxButton" shape='round' size="medium" (click)="changeLoggedInStatus()">Click Me to Login</ion-button>
+</div>
+<!-- #endregion -->
+
+
+
+
+  
+
+  <!-- #region NgForDemo (pull from array) -->
+  <!-- *NgFor : Dynamically builds HTML elements in the view for each instance of a variable in a collection -->
+  <div id="forLoopListContainer" *ngIf="demonstrationSelection=='ngFor'">
+   <ion-list  *ngFor="let color of colors" lines="none">
+      <ion-item>
+        <ion-label class="colorListLable" *ngIf="color=='Purple'" style="color:purple"> {{ color }}</ion-label>
+        <ion-label class="colorListLable" *ngIf="color=='Blue'" style="color:rgb(0, 32, 91)"> {{ color }}</ion-label>
+        <ion-label class="colorListLable" *ngIf="color=='Red'" style="color:rgb(191,13,62)"> {{ color }}</ion-label>
+        <ion-label class="colorListLable" *ngIf="color=='Grey'" style="color:rgb(51, 51, 51)"> {{ color }}</ion-label>
+      </ion-item>
+    </ion-list>
+ </div>
+<!-- #endregion -->
 
 </ion-content>

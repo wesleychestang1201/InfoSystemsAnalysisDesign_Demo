@@ -1,0 +1,159 @@
+#pageTitle {
+    text-align: center;
+    font-size: 35px;
+}   
+
+//#region SegmentCustomization
+
+//Segment
+.segmentToolbarBackground {
+    padding-top: 20px;
+}
+
+// Segment Buttons
+.toolbar .segment-button {
+    max-width: 500px;
+}
+
+//Segment Buttons
+.segmentButton {
+    border-left-width: .5px;
+    border-right-width: .5px;
+}
+
+ .sc-ion-segment-md-h {
+    --color-checked: rgba(0,32,91,1);
+    // --color-checked: rgba(191,13,62,1);
+}
+
+//#endregion
+
+
+//#region colorCustomization
+
+#colorSelectorContainer {
+position: relative;
+top: 30%;
+transform: translateY(-30%);
+line-height: 50%;
+text-align: center;
+}
+
+.jagBlue {
+margin-right: 100px;
+display: inline-block;
+vertical-align: middle;
+font-size: 100px;
+color: rgba(0,32,91,1);  
+}
+
+.jagRed {
+margin-left: 100px;
+display: inline-block;
+vertical-align: middle;
+font-size: 100px;
+color: rgba(191,13,62,1);
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+}
+
+.angularLogo {
+padding-top: 50px;
+display: inline-block;
+vertical-align: middle;
+font-size: 300px;
+}
+
+
+
+
+//#endregion
+
+
+//#region textBoxEntry
+
+//A lot of these lines are probably unecessary but it gets so convoluted that they just stayed here for my sanity
+#textBoxEntryContainer {
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+    line-height: 50%;
+    text-align: center;
+}
+
+.textBoxLabel {
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 50px;
+    color: rgba(191,13,62,1);
+}
+
+.textBoxItems {
+    display: inline-block;
+    width: 500px;
+    line-height:50;
+}
+
+.textBox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 50px;
+    color: rgba(0,32,91,1);
+}
+//#endregion
+
+
+//#region psuedoLoginTextEntry
+#psuedoLoginTextBoxEntryContainer {
+        position: relative;
+        top: 30%;
+        transform: translateY(-30%);
+        line-height: 50%;
+        text-align: center;
+    }
+
+    .loginTextBoxList {
+        display: block;
+        margin: auto;
+        line-height: 50%;
+        text-align: center;
+    }
+    
+    .loginTextBoxItems {
+        display: inline-block;
+        width: 500px;
+        line-height:50;
+    }
+    
+    .loginTextBox {
+        width: 500px;
+        display: inline-block;
+        height: 60px;
+        font-size: 50px;
+        line-height: 100%;
+        text-align: center;
+        vertical-align: middle;
+        color: rgba(0,32,91,1);
+    }
+
+//#endregion
+
+
+//#region forLoopList
+#forLoopListContainer {
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+    text-align: center;
+}
+
+.colorListLable {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 50px; 
+    text-align: center;
+}
+//#endregion
