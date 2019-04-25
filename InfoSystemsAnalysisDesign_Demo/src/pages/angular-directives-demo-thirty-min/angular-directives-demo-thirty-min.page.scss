@@ -26,6 +26,10 @@
     // --color-checked: rgba(191,13,62,1);
 }
 
+#navSegment {
+    color: rgba(191,13,62,1);
+}
+
 //#endregion
 
 
@@ -137,6 +141,14 @@ font-size: 300px;
         text-align: center;
         vertical-align: middle;
         color: rgba(0,32,91,1);
+    }
+
+    .loggedInAsLabel {
+        margin-bottom: 40px;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 50px;
+        color: rgba(191,13,62,1);
     }
 
 //#endregion

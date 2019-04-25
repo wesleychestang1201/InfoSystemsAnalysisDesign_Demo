@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from 'src/app/auth-guard.service'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -9,6 +10,12 @@ const routes: Routes = [
   { path: 'angular-directives-explanation', loadChildren: 'src/pages/angular-directives-explanation/angular-directives-explanation.module#AngularDirectivesExplanationPageModule' },
   { path: 'angular-directives-demo', loadChildren: 'src/pages/angular-directives-demo/angular-directives-demo.module#AngularDirectivesDemoPageModule' },
   { path: 'angular-directives-demo-thirty-min', loadChildren: 'src/pages/angular-directives-demo-thirty-min/angular-directives-demo-thirty-min.module#AngularDirectivesDemoThirtyMinPageModule' },
+  // { path: 'admin-page', loadChildren: 'src/pages/admin-page/admin-page.module#AdminPagePageModule' },
+  {
+    path: 'admin-page',
+    loadChildren: 'src/pages/admin-page/admin-page.module#AdminPagePageModule',
+    canActivate: [AuthGuardService]
+  }
 ];
 
 @NgModule({

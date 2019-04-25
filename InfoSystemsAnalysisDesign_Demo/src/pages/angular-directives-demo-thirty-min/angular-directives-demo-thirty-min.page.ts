@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
-import { Observable } from 'rxjs';
-import { from } from 'rxjs';
+import { Router } from '@angular/router';
+import { AuthGuardService } from '../../app/auth-guard.service'
 
 @Component({
   selector: 'app-angular-directives-demo-thirty-min',
@@ -9,7 +9,7 @@ import { from } from 'rxjs';
   styleUrls: ['./angular-directives-demo-thirty-min.page.scss'],
 })
 
-export class AngularDirectivesDemoThirtyMinPage {
+export class AngularDirectivesDemoThirtyMinPage  {
 
   //#region ClassVariables and Constructor
 
@@ -26,10 +26,10 @@ export class AngularDirectivesDemoThirtyMinPage {
   loggedIn: any;
 
   //This variable is bound to a value which is passed in from a function invoked through user interaction with the view
-  colorSelection: any;
+  public colorSelection: any;
 
 
-
+ 
 
   // []][][][][]][][][][][][][[]][][][][][][][][]]][][][][][][][][][][][][][][][][]]][][][][][][][][]][]]][][][]
   
@@ -48,7 +48,9 @@ export class AngularDirectivesDemoThirtyMinPage {
   
 
   //The constructor is used to instantiate any variables or representations of imports such as alert controllers
-  constructor(public toastController: ToastController) { 
+  constructor(public toastController: ToastController, 
+              private router: Router,
+              public authenticationService: AuthGuardService) { 
   //Populate the array with values statically, for simplicity of demonstration
   //However, this can not only be done dynamically, but from a database via certain methods
   this.colors = ['Purple', 'Blue', 'Red', 'Grey'];
@@ -59,7 +61,7 @@ export class AngularDirectivesDemoThirtyMinPage {
 
 
 
-  //#region DisplayMessage
+  //#region DisplayMessages
   //Display the popup message
   async displayMessage() {
     const toast = await this.toastController.create({
@@ -69,9 +71,27 @@ export class AngularDirectivesDemoThirtyMinPage {
     });
     toast.present();
   }
-  //#endregion
 
-  
+  //#endregion
+ 
+
+
+ //#region NavigateToAdminPage
+navigateToAdminPage() {
+  //If the user is logged in ad an "admin" pass a true value to the 'Authentication Guard' Service
+  if (this.psuedoLoginUsernameTextBoxEntry == "admin") {
+    this.authenticationService.authenticated = true
+  } else {
+    //Otherwise 'false'
+    this.authenticationService.authenticated = false
+  }
+  //Attempt to navigate to the "admin page"
+  this.router.navigate(['admin-page']); 
+}
+
+ //#endregion
+
+
 
 
   //#region ChangeLogoColor
@@ -96,6 +116,14 @@ export class AngularDirectivesDemoThirtyMinPage {
     }
   }
 
+  resetLogin() {
+    //Empty the variables which are holding the username and password information
+    //reset the logged in status to false
+    this.psuedoLoginUsernameTextBoxEntry = ""
+    this.psuedoLoginPasswordTextBoxEntry = ""
+    this.loggedIn ="false"
+  }
 
-  //#region
+
+  //#endregion
 }
